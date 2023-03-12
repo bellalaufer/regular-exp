@@ -4,6 +4,8 @@
 
 // Определи, есть ли во входной строке номер СНИЛС.
 function hasSNILS(string) {
+    const regex = /\d\d\d-\d\d\d-\d\d\d\s\d\d/
+    return regex.test(string)
 
 }
 
@@ -35,9 +37,9 @@ function formatSNILS(string) {
 }
 
 module.exports = {
-hasSNILS,
-grabSNILS,
-grabAllSNILS,
-hideAllSNILS,
-formatSNILS
+    hasSNILS,
+    grabSNILS,
+    grabAllSNILS,
+    hideAllSNILS,
+    formatSNILS
 };
