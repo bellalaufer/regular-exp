@@ -12,7 +12,9 @@ function hasSNILS(string) {
 
 // Найди и верни номер СНИЛС из строки.
 function grabSNILS(string) {
-
+    const regex = /\d\d\d-\d\d\d-\d\d\d\s\d\d/
+    let arr = string.match(regex)
+    return arr[0]
 }
 
 
