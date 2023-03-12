@@ -20,6 +20,14 @@ function grabSNILS(string) {
 
 // Найди и верни все номера СНИЛС, что есть в строке.
 function grabAllSNILS(string) {
+    const regex = /\d\d\d-\d\d\d-\d\d\d\s\d\d/g
+    let arr = [...string.matchAll(regex)]
+    if (arr == '') {
+        return null
+    } else {
+        return arr.map(el => el[0])
+    }
+
 
 }
 
