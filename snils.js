@@ -22,12 +22,7 @@ function grabSNILS(string) {
 function grabAllSNILS(string) {
     const regex = /\d\d\d-\d\d\d-\d\d\d\s\d\d/g
     let arr = [...string.matchAll(regex)]
-    if (arr == '') {
-        return null
-    } else {
-        return arr.map(el => el[0])
-    }
-
+    return arr == '' ? null : arr.map(el => el[0])
 
 }
 
@@ -35,7 +30,8 @@ function grabAllSNILS(string) {
 
 // Зашифруй номера СНИЛС. Example: XXX-XXX-XXX 30.
 function hideAllSNILS(string) {
-
+    const regex = /\d\d\d-\d\d\d-\d\d\d/g
+    return string.replace(regex, 'XXX-XXX-XXX')
 }
 
 
