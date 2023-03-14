@@ -4,10 +4,20 @@
 
 // Определи, есть ли во входной строке номер СНИЛС.
 function hasSNILS(string) {
-    const regex = /(\d{3})-(\d{3})-(\d{3})\s(\d{2})/g
-    return regex.test(string)
 
+    //Первый вариант с одним вараиантом написания СНИЛСа
+    // const regex = /(\d{3})-(\d{3})-(\d{3})\s(\d{2})/g
+    // return regex.test(string)
+
+    //Разные варианты написания
+    const regex1 = /(\d{3})(\d{3})(\d{3})(\d{2})/g
+    const regex2 = /(\d{3}).(\d{3}).(\d{3}).(\d{2})/g
+    const regex3 = /(\d{3})--(\d{3})--(\d{3})\s+(\d{2})/g
+
+    return regex1.test(string) || regex2.test(string) || regex3.test(string) ? true : false
 }
+
+
 
 
 // Найди и верни номер СНИЛС из строки.
